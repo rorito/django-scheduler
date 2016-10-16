@@ -339,6 +339,8 @@ def api_occurrences(request):
                 "end": occurrence.end.isoformat(),
                 "existed" : existed,
                 "event_id" : occurrence.event.id,
+                "description": occurrence.event.description,
+                "color_event": occurrence.event.color_event,
             })
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
